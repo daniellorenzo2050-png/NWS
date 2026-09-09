@@ -1,18 +1,42 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "nws",
+  "name": "nws-enterprise-panel",
   "main": "src/index.ts",
   "compatibility_date": "2026-09-09",
+  
+  // Configuração para Durable Objects (Logs em Tempo Real)
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "LOG_HUB",
+        "class_name": "LogHub"
+      }
+    ]
+  },
+
+  // Migrações necessárias para Durable Objects
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["LogHub"]
+    }
+  ],
+
+  // Banco de Dados D1 (Usuários, Metadados de Sites, Definições de DB)
   "d1_databases": [
     {
       "binding": "NWSD1",
-      "database_name": "nwsd1",
+      "database_name": "nws-db",
+      // SUBSTITUA PELO SEU DATABASE_ID REAL
       "database_id": "5bd4c96f-0a4e-4a32-9cab-3666cc1fcf8c"
     }
   ],
+
+  // Namespace KV (Conteúdo HTML dos Sites)
   "kv_namespaces": [
     {
       "binding": "NWSKV",
+      // SUBSTITUA PELO SEU ID REAL DO NAMESPACE NWSKV
       "id": "43703b51afc340f9ab9cfe20f4a11df2"
     }
   ]
