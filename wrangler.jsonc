@@ -3,9 +3,6 @@
   "name": "nws",
   "main": "src/index.ts",
   "compatibility_date": "2026-09-09",
-  "routes": [
-    { "pattern": "nws.rattew.workers.dev", "custom_domain": false }
-  ],
   "d1_databases": [
     {
       "binding": "NWSD1",
