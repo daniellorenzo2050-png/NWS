@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "nws-enterprise-panel",
+  "name": "nws",
   "main": "src/index.ts",
   "compatibility_date": "2026-09-09",
   
@@ -18,7 +18,7 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_classes": ["LogHub"]
+      "new_sqlite_classes": ["LogHub"]
     }
   ],
 
