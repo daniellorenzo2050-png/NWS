@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nws-cloudflare",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-09",
+  "routes": [
+    { "pattern": "nws.rattew.workers.dev", "custom_domain": false }
+  ],
+  "d1_databases": [
+    {
+      "binding": "NWSD1",
+      "database_name": "nwsd1",
+      "database_id": "5bd4c96f-0a4e-4a32-9cab-3666cc1fcf8c"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "NWSKV",
+      "id": "43703b51afc340f9ab9cfe20f4a11df2"
+    }
+  ]
+}
